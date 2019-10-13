@@ -1,5 +1,12 @@
 {% extends "layout.html" %}
 {% block content %}
-    <h1> This is inside the home page.</h1>
+    {% for post in posts %}
+        {{ post.get("author")}}
+        </br>
+        {{ post.get("content")}}
+        </br>
+        {{ post.get("date")}}
+        </br>
+    {% endfor %}
 {% endblock content %}
 

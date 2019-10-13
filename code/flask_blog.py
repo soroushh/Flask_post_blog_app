@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect
 app = Flask(__name__)
 
 posts=[
@@ -21,6 +21,8 @@ posts=[
 @app.route('/')
 def hello():
     return render_template("home.html", posts=posts)
+
+
 
 @app.route('/about')
 def name():
