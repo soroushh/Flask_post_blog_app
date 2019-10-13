@@ -1,20 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>
+{% extends "layout.html" %}
+{% block content %}
+    <h1> This is inside the home page.</h1>
+{% endblock content %}
 
-    </title>
-
-</head>
-<body>
-    <h1>
-        This is home page
-    </h1>
-    {% for post in posts %}
-        <p> {{post.get("author")}}</p>
-    {% endfor %}
-
-
-</body>
-
-</html>
