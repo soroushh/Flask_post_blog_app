@@ -1,21 +1,33 @@
 from flask import Flask, render_template
-from collections import namedtuple
-
 app = Flask(__name__)
 
+posts=[
+    {
+        "author": "soroush",
+        "title": "blig post 1",
+        "content": "first content",
+        "date": "18 october"
+    },
+    {
+        "author": "farnaz",
+        "title": "blig post 2",
+        "content": "second content",
+        "date": "20 october"
+    }
+
+]
+
+@app.route('/home')
 @app.route('/')
 def hello():
-    return "<h1>hey mate, this is a change</h1>"
+    return render_template("home.html", posts=posts)
 
 @app.route('/about')
 def name():
-    Person = namedtuple("Person", "name family")
-    soroush = Person("soroush","khosravi")
-    return  render_template("base.html", tuple=soroush)
+    return render_template("about.html")
 
-if __name__ == "__main__":
+if __name__=="__main__":
     app.run(debug=True)
-
 
 
 
